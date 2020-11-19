@@ -9,6 +9,7 @@ public class TaskA {
 
     private static void step1() {
         double a = 756.13;
+
         double x = 0.3;
         double part1 = cos(pow(x * x + PI / 6, 5));
         double part2 = sqrt(x * pow(a, 3));
