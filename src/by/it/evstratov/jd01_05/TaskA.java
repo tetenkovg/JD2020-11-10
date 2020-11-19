@@ -7,6 +7,22 @@ public class TaskA {
     public static void main(String[] args) {
 
         step1();
+        step2();
+
+    }
+
+    private static void step2() {
+
+        double a = 1.21;
+        double b = 0.371;
+
+        double part1 = tan(pow((a+b),2));
+        double part2 = cbrt(a+1.5);
+        double part3 = a*pow(b,5);
+        double part4 = b / (log(pow(a,2)));
+
+        double y = part1 - part2 + part3 - part4;
+        System.out.println(y);
 
     }
 
