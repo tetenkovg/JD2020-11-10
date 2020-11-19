@@ -14,7 +14,7 @@ public class TaskB {
         double hi = 2;
         double deltaA = 0.2;
         double y = 0;
-        while (a <= 2) {
+        while (a <= hi) {
             for (int x = 1; x < 7; x++) {
                 y = y + (pow(7, a) - cos(x));
             }
