@@ -13,12 +13,14 @@ public class TaskA {
         double x = 12.1;
         double a = -5.0;
 
-        for (int i = -5; i <= 12 ; i++) {
+        for (int i = -5; a < 12 ; i+=3.75) {
             double part1 = pow(E, a * x);
             double part2 = 3.45 * a;
-            double f = part1 = part2;
-            System.out.printf("For x=%f a=%f f=%f", x, a, f);
+            double f = part1 - part2;
+            System.out.printf("При a= %.2f f=%f\n", a, f);
+
             a += 3.75;
+
 
         }
 
