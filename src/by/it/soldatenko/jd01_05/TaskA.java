@@ -23,12 +23,22 @@ public class TaskA {
     private static void Step2() {
         double a = 1.21;
         double b = 0.371;
-        double one_3 = (double)1/3;
-        double  y = tan((a + b)*(a + b)) - pow((a + 1.5), one_3) + a * pow(b,5) - (b / (log(a * a)));
+        double one_3 = (double) 1 / 3;
+        double y = tan((a + b) * (a + b)) - pow((a + 1.5), one_3) + a * pow(b, 5) - (b / (log(a * a)));
         System.out.printf("For x=%f a =%f z=%f\n", a, b, y);
     }
 
     private static void Step3() {
+        double x = 12.1;
+        double deltaA = 3.75;
+        double hi = 12;
+        double a = -5;
+        while (a <= hi) {
+            double f = pow(E, a * x) - 3.45 * a;
+            System.out.printf("For a=%f f =%f\n", a, f);
+            a = a + deltaA;
+
+        }
 
     }
 
