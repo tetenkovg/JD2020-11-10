@@ -21,27 +21,26 @@ public class TaskB {
             System.out.println(y);
         }
 
-
-
     }
 
     private static void step2(){
 
         for (double x = -5.5; x < 2; x = x + 0.5) {
-            double alpha = 0;
-            double beta = 0;
-            if(x/2 > -2 && x/2 <= -1){
+            double alpha;
+            double beta;
+            if(x/2.0 > -2 && x/2.0 <= -1){
+                System.out.println(x/2);
                 beta = sin(x*x);
-                alpha = log(abs(beta+2.74));
-                System.out.println("alfa = "+alpha+", beta = "+beta);
-            }else if(x/2 > -1 && x/2 < 0.2){
+                alpha = log10(abs(beta+2.74));
+                System.out.println("При x/2 = "+(x/2)+" alfa = "+alpha+", beta = "+beta);
+            }else if(x/2.0 > -1 && x/2.0 < 0.2){
                 beta = cos(x*x);
-                alpha = log(abs(beta+2.74));
-                System.out.println("alfa = "+alpha+", beta = "+beta);
-            }else if(x/2 == 0.2){
+                alpha = log10(abs(beta+2.74));
+                System.out.println("При x/2 = "+(x/2)+" alfa = "+alpha+", beta = "+beta);
+            }else if(x/2.0 == 0.2){
                 beta = 1/(tan(x*x));
-                alpha = log(abs(beta+2.74));
-                System.out.println("alfa = "+alpha+", beta = "+beta);
+                alpha = log10(abs(beta+2.74));
+                System.out.println("При x/2 = "+(x/2)+" alfa = "+alpha+", beta = "+beta);
             }else {
                 System.out.println("Вычисления не определены");
             }
