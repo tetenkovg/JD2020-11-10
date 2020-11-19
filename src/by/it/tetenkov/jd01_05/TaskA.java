@@ -20,7 +20,7 @@ public class TaskA {
             System.out.printf("При a= %.2f f=%f\n", a, f);
 
             a += 3.75;
-
+            // test
 
         }
 
