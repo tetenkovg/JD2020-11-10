@@ -1,9 +1,9 @@
 package by.it;
 
-public class Test {
+public class TT {
     //red - new
     //black - no change
     //green - added to index
     //blue - changed
-    //fjghdfhjhgdfkhjgh
+    
 }
