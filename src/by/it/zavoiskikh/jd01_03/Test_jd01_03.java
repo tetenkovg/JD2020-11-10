@@ -1,4 +1,4 @@
-package by.it.zavoiskikh;
+package by.it.zavoiskikh.jd01_03;
 
 import org.junit.Test;
 
