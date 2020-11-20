@@ -57,7 +57,7 @@ public class TaskB {
         System.out.println("-------------------------------------------------------");
        //
         System.out.printf("%-9s%-10d%n","Итого", totalsalary);
-        System.out.printf("%-9s%-10.5f%n","Средняя", (double)(totalsalary/n));
+        System.out.printf("%-9s%-10.5f%n","Средняя", ((double)totalsalary/(n*4)));
         System.out.println("-------------------------------------------------------");
     }
 }
