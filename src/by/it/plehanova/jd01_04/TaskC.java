@@ -42,7 +42,7 @@ public class TaskC {
         double first = array[0];
         double last = array[array.length - 1];
 
-        Helper.sort(array);
+        mergeSort(array);
 
         InOut.printArray(array, "V", 4);
 
@@ -51,6 +51,66 @@ public class TaskC {
 
         System.out.printf("Index of first element=%d\n", indexOfFirst);
         System.out.printf("Index of last element=%d\n", indexOfLast);
+    }
+    static void mergeSort(double[] array) {
+
+        double[] buffer = new double[array.length];
+        buffer = mergeSort(array, 0, buffer.length);
+
+        System.arraycopy(buffer, 0, array,0, array.length);
+    }
+
+    private static double[] mergeSort(double[] array, int left, int right) {
+
+        if (array.length < 2) {
+            return array;
+        }
+        int average = array.length / 2;
+        double[] buffer = array;
+        double[] arr1 = new double[average];
+        double[] arr2 = new double[array.length - arr1.length];
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = array[i];
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = array[i + average];
+        }
+        arr1 = mergeSort(arr1, 0, average);
+        arr2 = mergeSort(arr2, average + 1, array.length - 1);
+        buffer = merge(arr1, arr2);
+
+        return buffer;
+    }
+
+
+    private static double[] merge(double[] part1, double[] part2) {
+        int indexPart1 = 0;
+        int indexPart2 = 0;
+
+        double[] array = new double[part1.length + part2.length];
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println();
+            if (indexPart1 == part1.length) {
+                array[i] = part2[indexPart2];
+                indexPart2++;
+
+            } else if (indexPart2 == part2.length) {
+                array[i] = part1[indexPart1];
+                indexPart1++;
+
+            } else if (part1[indexPart1] < part2[indexPart2]) {
+                array[i] = part1[indexPart1];
+                indexPart1++;
+
+
+            } else {
+                array[i] = part2[indexPart2];
+                indexPart2++;
+            }
+        }
+        return array;
     }
 
     static int binarySearch(double[] array, double value) {
