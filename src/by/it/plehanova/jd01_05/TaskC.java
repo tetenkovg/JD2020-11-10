@@ -6,6 +6,8 @@ public class TaskC {
     public static void main(String[] args) {
 
         step1();
+        step2();
+
     }
 
     private static void step1() {
@@ -59,6 +61,7 @@ public class TaskC {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     private static void step2() {
