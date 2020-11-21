@@ -4,7 +4,7 @@ import static java.lang.Math.cbrt;
 
 public class TaskC {
     public static void main(String[] args) {
-//        Task6();
+        Task6();
         Task7();
     }
 
