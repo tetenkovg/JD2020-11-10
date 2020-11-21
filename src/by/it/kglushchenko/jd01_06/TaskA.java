@@ -11,6 +11,7 @@ public class TaskA {
         while(matcher.find()){
             int index =  matcher.start();
             dynText.setCharAt(index, '#');
+
         }
         System.out.println(dynText);
     }
