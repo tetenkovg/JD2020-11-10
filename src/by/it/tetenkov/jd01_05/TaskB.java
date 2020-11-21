@@ -2,7 +2,9 @@ package by.it.tetenkov.jd01_05;
 import static java.lang.Math.*;
 public class TaskB {
     public static void main(String[] args) {
-        stepone();steptwo();
+        stepone();
+        System.out.println();
+        steptwo();
 
     }
 
@@ -30,15 +32,15 @@ public class TaskB {
 
     private static void stepone() {
         double a = 0;
-        int x = 1;
+        double x = 1;
         double y = 0;
 
-        for (x = 1; x < 7; x++) {
+        for (a = 0; a <= 2; a += 0.2) {
+            for (x = 1; x < 7; x += 1) {
+                y += pow(7, a) - cos(x);
 
-
-
-
-
+            }
+            System.out.printf("При a = %f Сумма y = %f\n", a, y);
         }
 
     }
