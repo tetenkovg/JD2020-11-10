@@ -10,8 +10,11 @@ public class TaskA {
         Matcher matcher = pattern.matcher(dynText);
         while(matcher.find()){
             int index =  matcher.start();
-            dynText.setCharAt(index, '#');
-
+            dynText.setCharAt(index+3, '#');
+            int length = matcher.end()-matcher.start();
+            if(length>=7){
+                dynText.setCharAt(index+6, '#');
+            }
         }
         System.out.println(dynText);
     }
