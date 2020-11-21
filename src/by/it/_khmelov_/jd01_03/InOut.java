@@ -1,4 +1,4 @@
-package by.it.khmelov.jd01_03;
+package by.it._khmelov_.jd01_03;
 
 class InOut {
     /**
