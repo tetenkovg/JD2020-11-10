@@ -1,6 +1,6 @@
 package by.it.leshchenko.jd01_05;
 
-import static java.lang.Math.cbrt;
+import java.util.Arrays;
 
 public class TaskC {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class TaskC {
         double stop = 9;
         double step = (stop - start) / (n - 1);
         for (int i = 0; i < n; i++) {
-            arrayA[i] = cbrt(start * start + 4.5);
+            arrayA[i] = Math.cbrt(start * start + 4.5);
             start += step;
         }
 
@@ -46,6 +46,8 @@ public class TaskC {
             }
         }
 
+        Arrays.sort(arrayB);
+
         // Выводим массив из элементов > 3.5
         System.out.println("Массив B[] из элементов массива A > 3.5");
         for (int i = 0, l = arrayB.length; i < l; i++) {
@@ -54,6 +56,7 @@ public class TaskC {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     private static void Task7() {
