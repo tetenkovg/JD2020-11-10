@@ -5,7 +5,6 @@ public class TaskB {
         stepone();
         System.out.println();
         steptwo();
-
     }
 
     private static void steptwo() {
