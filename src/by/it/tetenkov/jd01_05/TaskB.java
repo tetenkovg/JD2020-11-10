@@ -2,12 +2,12 @@ package by.it.tetenkov.jd01_05;
 import static java.lang.Math.*;
 public class TaskB {
     public static void main(String[] args) {
-        stepone();
+        stepOne();
         System.out.println();
-        steptwo();
+        stepTwo();
     }
 
-    private static void steptwo() {
+    private static void stepTwo() {
 
         double x = -6.0;
         double a = 0;
@@ -29,7 +29,7 @@ public class TaskB {
         }
     }
 
-    private static void stepone() {
+    private static void stepOne() {
         double a = 0;
         double x = 1;
         double y = 0;
