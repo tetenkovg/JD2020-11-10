@@ -20,8 +20,8 @@ public class TaskC {
 
         for (int i = 0; i < array.length; i++) {
             String cell = String.format("║%s[%- 3d]=%-4f", name,i, array[i]);
-            int countEmptyCells = countColumns - (array.length - countColumns*(array.length/countColumns));
-
+            int countEmptyCells = (int) ceil((double)array.length / (double)countColumns); //проработать
+            System.out.println(countEmptyCells);
             if(i == 0){
                 System.out.print("╔");
                 for (int j = 0; j < countColumns; j++) {
@@ -78,7 +78,7 @@ public class TaskC {
 
         int stepOnRow = 0;
         double step =  ceil((double) array.length / (double) countColumns);
-        int countEmptyCells = countColumns - (array.length - countColumns*(array.length/countColumns));
+        int countEmptyCells = array.length - countColumns*(array.length/countColumns); //проработать
         System.out.println(countEmptyCells);
         for (int i = 0; i < array.length; i++) {
             String cell;
