@@ -11,8 +11,8 @@ public class TaskA1 {
         while (matcher.find()){
             int index=matcher.start();
             dynText.setCharAt(index+3,'#');
-            int lenght=matcher.end()-matcher.start();
-            if (lenght>=7){
+            int length=matcher.end()-matcher.start();
+            if (length>=7){
                 dynText.setCharAt(index+6,'#');
             }
         }
