@@ -20,8 +20,7 @@ public class TaskC {
 
         for (int i = 0; i < array.length; i++) {
             String cell = String.format("║%s[%- 3d]=%-4f", name,i, array[i]);
-            int countEmptyCells = countColumns * ((int) ceil((double)array.length / (double)countColumns)) ; //проработать
-            System.out.println(countEmptyCells);
+            int countEmptyCells = (countColumns * ((int) ceil((double)array.length / (double)countColumns))) - array.length; //проработать
             if(i == 0){
                 System.out.print("╔");
                 for (int j = 0; j < countColumns; j++) {
@@ -78,14 +77,21 @@ public class TaskC {
 
         int stepOnRow = 0;
         double step =  ceil((double) array.length / (double) countColumns);
-        int countEmptyCells = array.length - countColumns*(array.length/countColumns); //проработать
-        System.out.println(countEmptyCells);
+        int countEmptyCells = (countColumns * ((int) ceil((double)array.length / (double)countColumns))) - array.length; //проработать
+        int lengthCell = 0;
         for (int i = 0; i < array.length; i++) {
             String cell;
             if(i+stepOnRow > array.length-1){
                 cell = "";
+                for (int j = 0; j < lengthCell; j++) {
+                    cell = cell+" ";
+                }
             }else{
+                if(i!=1){
+
+                }
                 cell = String.format("║%s[%- 3d]=%-4f", name,i+stepOnRow, array[i+stepOnRow]);
+                lengthCell = cell.length();
             }
 
             if(i == 0){
@@ -102,6 +108,7 @@ public class TaskC {
             }
 
             System.out.print(cell);
+
             stepOnRow += step;
 
             if(i+1 == array.length){
