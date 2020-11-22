@@ -31,5 +31,13 @@ package by.it.zavoiskikh.jd01_04;
 
 
     }
+      public static void arrayPrint2D (int [] [] m, String name) {
+          for (int i=0; i< m.length; i++) {
+              for (int j=0; j<m[0].length; j++)
+                  System.out.printf(name + "-10f", m [i] [j]);
+          }
+      }
+
+
 }
 
