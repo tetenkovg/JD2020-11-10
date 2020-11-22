@@ -16,18 +16,18 @@ public class TaskC {
 
     }
 
-    static void printArrayWithGraphicsRow(double[] array, String name, int countColumns){
+    static void printArrayWithGraphicsRow(double[] array, String name, int columns){
 
         for (int i = 0; i < array.length; i++) {
             String cell = String.format("║%s[%- 3d]=%-4f", name,i, array[i]);
-            int countEmptyCells = (countColumns * ((int) ceil((double)array.length / (double)countColumns))) - array.length; //проработать
+            int countEmptyCells = (columns * ((int) ceil((double)array.length / (double)columns))) - array.length; //проработать
             if(i == 0){
                 System.out.print("╔");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╦");
                     }
                 }
@@ -45,24 +45,24 @@ public class TaskC {
                 }
             }
 
-            if( (i+1) % countColumns == 0 && i+1 != array.length){
+            if( (i+1) % columns == 0 && i+1 != array.length){
                 System.out.print("║\n╠");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╬");
                     }
                 }
                 System.out.print("╣\n");
             }else if(i + 1 == array.length){
                 System.out.print("\n╚");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╩");
                     }
                 }
@@ -73,34 +73,33 @@ public class TaskC {
 
     }
 
-    static void printArrayWithGraphicsCol(double[] array, String name, int countColumns){
+    static void printArrayWithGraphicsCol(double[] array, String name, int columns){
 
+        int step = (int) ceil((double) array.length / (double) columns);
         int stepOnRow = 0;
-        double step =  ceil((double) array.length / (double) countColumns);
-        int countEmptyCells = (countColumns * ((int) ceil((double)array.length / (double)countColumns))) - array.length; //проработать
+        int countEmptyCells = (columns * ((int) ceil((double)array.length / (double)columns))) - array.length; //проработать
         int lengthCell = 0;
+        int countRow = 0;
         for (int i = 0; i < array.length; i++) {
+
             String cell;
-            if(i+stepOnRow > array.length-1){
+            if(stepOnRow > array.length-1){
                 cell = "";
                 for (int j = 0; j < lengthCell; j++) {
                     cell = cell+" ";
                 }
             }else{
-                if(i!=1){
-
-                }
-                cell = String.format("║%s[%- 3d]=%-4f", name,i+stepOnRow, array[i+stepOnRow]);
+                cell = String.format("║%s[%- 3d]=%-4f", name,stepOnRow, array[stepOnRow]);
                 lengthCell = cell.length();
             }
 
             if(i == 0){
                 System.out.print("╔");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╦");
                     }
                 }
@@ -108,7 +107,6 @@ public class TaskC {
             }
 
             System.out.print(cell);
-
             stepOnRow += step;
 
             if(i+1 == array.length){
@@ -121,25 +119,26 @@ public class TaskC {
                 }
             }
 
-            if( (i+1) % countColumns == 0 && i+1 != array.length){
-                stepOnRow = 0;
+            if( (i+1) % columns == 0 && i+1 != array.length){
+                countRow++;
+                stepOnRow = countRow;
                 System.out.print("║\n╠");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╬");
                     }
                 }
                 System.out.print("╣\n");
             }else if(i + 1 == array.length){
                 System.out.print("\n╚");
-                for (int j = 0; j < countColumns; j++) {
+                for (int j = 0; j < columns; j++) {
                     for (int k = 0; k < cell.length()-1; k++) {
                         System.out.print("═");
                     }
-                    if(countColumns - j != 1){
+                    if(columns - j != 1){
                         System.out.print("╩");
                     }
                 }
