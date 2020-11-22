@@ -1,4 +1,4 @@
-package by.it.zavoiskikh.jd01_03;
+package by.it.zavoiskikh.jd01_04;
 
  class InOut {
 
