@@ -17,13 +17,13 @@ public class TaskA2 {
     }
 
     public static void main(String[] args) {
-        StringBuilder dynText = new StringBuilder(Poem.text);
-        Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
-        Matcher matcher = pattern.matcher(dynText);
+
+        Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]+");
+        Matcher matcher = pattern.matcher(Poem.text);
         while (matcher.find()) {
             String word=matcher.group();
             int p=pos(word);
-            if(p>0) {
+            if(p>=0) {
                 count[p]++;
             }
             else{
@@ -36,6 +36,7 @@ public class TaskA2 {
             }
         }
         for (int i = 0; i < w.length; i++) {
+            System.out.println(w[i]+"="+count[i]);
 
         }
     }
