@@ -20,7 +20,5 @@ public class TaskA2 {
             }
             System.out.println(words[i] + "=" + count);
         }
-
-
     }
 }

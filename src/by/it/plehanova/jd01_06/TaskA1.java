@@ -9,15 +9,14 @@ public class TaskA1 {
 
         Pattern pattern = Pattern.compile("[а-яА-ЯЁё]{4,}");
         Matcher matcher = pattern.matcher(dynText);
-        while (matcher.find()){
+        while (matcher.find()) {
             int index = matcher.start();
 
-            dynText.setCharAt(index+3, '#');
-            int length = matcher.end()-matcher.start();
-            if(length>=7){
-                dynText.setCharAt(index+6, '#');
+            dynText.setCharAt(index + 3, '#');
+            int length = matcher.end() - matcher.start();
+            if (length >= 7) {
+                dynText.setCharAt(index + 6, '#');
             }
-
         }
         System.out.println(dynText);
     }

@@ -16,7 +16,6 @@ public class TaskB2 {
         for (int i = 0; i < sentTwo.length; i++) {
             System.out.print(sentTwo[i] + "\n");
         }
-
     }
 
     private static String[] sort(String[] sentence) {

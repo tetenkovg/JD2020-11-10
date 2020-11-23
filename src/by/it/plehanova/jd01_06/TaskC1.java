@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 public class TaskC1 {
     public static void main(String[] args) {
+
         StringBuilder text = new StringBuilder(Poem.text);
         Pattern pattern = Pattern.compile("[\n]+");
 

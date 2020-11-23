@@ -1,6 +1,5 @@
 package by.it.plehanova.jd01_06;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,10 +29,6 @@ public class TaskB1 {
         while (matcher.find()) {
             String word = matcher.group();
             wordPattern(word);
-
         }
-
     }
-
-
 }

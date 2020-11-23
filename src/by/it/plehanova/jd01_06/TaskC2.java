@@ -1,7 +1,6 @@
 package by.it.plehanova.jd01_06;
 
 import java.util.Random;
-import java.util.regex.Pattern;
 
 public class TaskC2 {
     public static void main(String[] args) {
