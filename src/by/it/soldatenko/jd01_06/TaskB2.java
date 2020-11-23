@@ -13,6 +13,7 @@ public class TaskB2 {
             str[i] = str[i].trim();
             leinght[i] = str[i].length();
         }
+
         int n = leinght.length;
         for (int i = 0; i < n-1; i++)
             for (int j = 0; j < n-i-1; j++)
