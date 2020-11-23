@@ -1,7 +1,5 @@
 package by.it.plehanova.jd01_06;
 
-
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskC1 {
@@ -37,7 +35,5 @@ public class TaskC1 {
             }
             System.out.println(words);
         }
-
-
     }
 }
