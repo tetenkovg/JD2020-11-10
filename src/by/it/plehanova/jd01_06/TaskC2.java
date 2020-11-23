@@ -20,14 +20,12 @@ public class TaskC2 {
         }
         start = System.nanoTime();
         String sentence1 = slow(generate);
-        finish = System.nanoTime();
-        System.out.println("time = " + (finish - start));
+        System.out.println("timeSlow = " + (System.nanoTime()- start)/1000_000.0 + "ms");
         System.out.println(sentence1);
 
         start = System.nanoTime();
         String sentence2 = fast(generate);
-        finish = System.nanoTime();
-        System.out.println("time = " + (finish - start));
+        System.out.println("timeFast = " + (System.nanoTime() - start)/1000_000.0 + "ms");
         System.out.println(sentence2);
 
 
