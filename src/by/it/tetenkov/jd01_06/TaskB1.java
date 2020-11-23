@@ -10,7 +10,7 @@ public class TaskB1 {
 
 
     private static String[] words = {};
-    private static String consonantsRussian = "цкнгшщзхфвпрлджбтмсч"; // согланые
+    private static String consonantsRussian = "цкнгшщзхфвпрлджбтмсч"; // соглаcные
     private static String[] vowelsWords = {};
     private static String vowelsRussian = "аоуэиыеёяюй"; // гласные
 
@@ -18,10 +18,6 @@ public class TaskB1 {
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{2,}");
         Matcher matcher = pattern.matcher(Poem.text);
-        //String[] words = Poem.text.split(" ");
-        //System.out.println(Arrays.toString(firstSort(words)));
-        //firstSort(words);
-        //secondsSort(words);
 
         while (matcher.find()) {
             String word = matcher.group();
@@ -33,8 +29,7 @@ public class TaskB1 {
         }
 
         filter(words);
-
-
+        
     }
 
     private static void filter(String[] words) {
