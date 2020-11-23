@@ -6,28 +6,20 @@ import java.util.regex.Pattern;
 public class TaskC2 {
     public static void main(String[] args) {
 
+        String random = generate(Poem.text);
         long start;
-        long finish;
 
-        String[] original = Poem.text.split("[^а-яА-ЯёЁ]+");
-
-        Random random = new Random();
-
-        String generate = "";
-        while (generate.length() < 1000) {
-            int i = random.nextInt(original.length);
-            generate = generate + " " + original[i];
-        }
         start = System.nanoTime();
-        String sentence1 = slow(generate);
-        System.out.println("timeSlow = " + (System.nanoTime()- start)/1000_000.0 + "ms");
+        String sentence1 = slow(random);
+
+        System.out.println("timeSlow = " + (System.nanoTime() - start) / 1000_000.0 + "ms");
         System.out.println(sentence1);
 
         start = System.nanoTime();
-        String sentence2 = fast(generate);
-        System.out.println("timeFast = " + (System.nanoTime() - start)/1000_000.0 + "ms");
-        System.out.println(sentence2);
+        String sentence2 = fast(random);
 
+        System.out.println("timeFast = " + (System.nanoTime() - start) / 1000_000.0 + "ms");
+        System.out.println(sentence2);
 
     }
 
@@ -53,5 +45,22 @@ public class TaskC2 {
         String str = new String(gen2);
 
         return str;
+    }
+
+    private static String generate(String text) {
+
+        StringBuilder words = new StringBuilder();
+        text = text.replaceAll("[^а-яА-ЯёЁ]+"," ").trim();
+        String[] array = text.split(" ");
+
+        Random random = new Random();
+
+        while (words.length() < 1000) {
+            int i = random.nextInt(array.length);
+            words = words.append(" ").append(array[i]);
+        }
+
+        String generate = new String(words);
+        return generate;
     }
 }
