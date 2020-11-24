@@ -37,7 +37,7 @@ public class TaskB1 {
 
         // Удаляем из строк слов лишние элементы
         for (int i = 0; i < words1.length; i++) {
-            words2[i] = words1[i].split('.');
+            //words2[i] = words1[i].split('.');
         }
 
         /*
