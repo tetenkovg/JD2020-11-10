@@ -6,7 +6,7 @@ public class TaskA {
 
     public static void main(String[] args) {
         calcA1();
-
+        calcA2();
     }
 
        public static void calcA1 () {
@@ -23,6 +23,12 @@ public class TaskA {
     }
 
     public static void calcA2 () {
+        double a = 1.21;
+        double b=0.371;
+        double y =Math.tan(Math.pow((a+b),2))-Math.cbrt((a+1.5))+a*Math.pow((b),5)-b/Math.log(Math.pow(a,2));
+        System.out.println("y="+y);
 
     }
+
+
 }
