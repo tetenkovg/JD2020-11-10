@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class TaskC2 {
 
-    private static long number = System.nanoTime();
+    static long number = System.nanoTime();
 
     public static void main(String[] args) {
 
@@ -25,13 +25,13 @@ public class TaskC2 {
     }
 
     private static String slow(String text) {
+        Random random = new Random(number);
 
         text = text.replaceAll("[^а-яА-ЯёЁ]+", " ").trim();
         String[] array = text.split(" ");
 
-        Random random = new Random(number);
         String gen1 = "";
-        while (gen1.length() < 1000) {
+        while (gen1.length() < 10000) {
             int i = random.nextInt(array.length);
             gen1 = gen1 + " " + array[i];
         }
@@ -40,13 +40,14 @@ public class TaskC2 {
     }
 
     private static String fast(String text) {
-        StringBuilder words = new StringBuilder();
+        Random random = new Random(number);
+
         text = text.replaceAll("[^а-яА-ЯёЁ]+", " ").trim();
         String[] array = text.split(" ");
 
-        Random random = new Random(number);
 
-        while (words.length() < 1000) {
+        StringBuilder words = new StringBuilder();
+        while (words.length() < 10000) {
             int i = random.nextInt(array.length);
             words = words.append(" ").append(array[i]);
         }
