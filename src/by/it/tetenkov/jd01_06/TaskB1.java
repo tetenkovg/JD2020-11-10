@@ -29,7 +29,7 @@ public class TaskB1 {
         }
 
         filter(words);
-        
+
     }
 
     private static void filter(String[] words) {
