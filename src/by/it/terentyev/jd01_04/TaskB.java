@@ -13,30 +13,34 @@ public class TaskB {
         String[] lastNames = new String[n];
         for (int i = 0; i < n; i++) {
             lastNames[i]= sc.next();
+            }
+
+        int[][] salary = new int[n][4];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Введите зарплату для "+lastNames[i]);
+            for (int j = 0; j < salary[i].length; j++) {
+                salary[i][j]=sc.nextInt();
+            }
         }
-        int[][] zarplata=new int[n][4];
-       //int[] zarplataTmp=new int[4];
-       // for (int i = 0; i < n; i++) {
-            System.out.println("Введите зарплату для "+lastNames[1]);
-            String zarplataLine = sc.next();
-            //String zarplataLine = "80 2 3 4";
-            //double[] array= String.line;
-            String[] strArray = zarplataLine.trim().split(" ");
-           // double[] result=new double[strArray.length];
-        System.out.println(Arrays.toString(strArray));
-            //int[] result=new int[zarplataLine.length];
-
-           //String zarplataTmp [] = zarplataLine.trim().split(" ");
-//        for (int i = 0; i <= n; i++) {
-//            zarplata [1][i] = Integer.parseInt(strArray[i]);
-//
-//        }
-//        System.out.println(Arrays.deepToString(zarplata));
-           //zarplata [1][] = int[strArray.length];
-           // String[] strArray = zarplataLine.trim().split(" ");
-           // double[] result=new double[strArray.length];
+        for (int i = 0; i < 54; i++)
+            System.out.print("-");
+        System.out.println();
+        System.out.println("Фамилия  Квартал1  Квартал2  Квартал3  Квартал4  Итого");
+        for (int i = 0; i < 54; i++)
+            System.out.print("-");
+        System.out.println();
+        int allSumSalary =0;
+        for (int i = 0; i < n; i++) {
+            int sumSalary = salary[i][0]+salary[i][1]+salary[i][2]+salary[i][3];
+            allSumSalary = allSumSalary+sumSalary;
+            System.out.printf("%-8s:%-10d%-10d%-10d%-10d%-5d%n", lastNames[i], salary[i][0],salary[i][1], salary[i][2],salary[i][3],sumSalary);
         }
-
-
+        //double midSalary = (double) allSumSalary / (double) n /4;
+        for (int i = 0; i < 54; i++) System.out.print("-");
+        System.out.println();
+        System.out.printf("%-9s%-10d%n", "Итого", allSumSalary);
+        System.out.printf("%-9s%-10d%n", "Средняя", allSumSalary / n /4);
     }
-//}
+}
+
