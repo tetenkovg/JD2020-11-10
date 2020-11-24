@@ -27,17 +27,19 @@ public class TaskB1 {
 
         // Создаем массив слов
         String[] words1 = stringText.split(" ");
-        String[] words2; // = new String[words1.length]; // убераем , . - : !
+        String[] words2 = new String[words1.length]; // убераем , . - : !
 
-        // Удаляем из строк слов лишние элементы
-        for(int i=0; i < words1.length; i++) {
-            //words2[i] = words1[i].split(",");
-        }
 
         // Выводим список слов по очереди
-        for (int i=0; i< words1.length; i++){
+        for (int i = 0; i < words1.length; i++) {
             System.out.println(words1[i]);
         }
+
+        // Удаляем из строк слов лишние элементы
+        for (int i = 0; i < words1.length; i++) {
+            words2[i] = words1[i].split('.');
+        }
+
         /*
         String[] sentences = stringTextClear.trim().split("\n"); // разбивает текст на строки
         // Разбиваем строки на
