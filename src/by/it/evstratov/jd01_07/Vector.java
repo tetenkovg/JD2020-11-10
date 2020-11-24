@@ -16,7 +16,15 @@ public class Vector extends Var{
         this.value = otherVector.value;
     }
 
+    public Vector(String strVector) {
+        String str = strVector.replaceAll("[{}]","");
+        String[] arrayStrings = str.split(",");
+        this.value = new double[arrayStrings.length];
+        for (int i = 0; i < value.length; i++) {
+            value[i] = Double.parseDouble(arrayStrings[i].trim());
+        }
 
+    }
 
     @Override
     public String toString() {
