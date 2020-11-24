@@ -7,6 +7,7 @@ public class TaskA {
     public static void main(String[] args) {
         calcA1();
         calcA2();
+        calcA3();
     }
 
        public static void calcA1 () {
@@ -30,5 +31,14 @@ public class TaskA {
 
     }
 
+    public static void calcA3 () {
+        double x =12.1;
+       for (double a=-5; a<=12; a=a+3.75) {
+          double f = Math.exp (a*x)-3.45*a;
+          System.out.printf ("При a=%6.2f f=%g\n", a,f);
+
+        }
+
+    }
 
 }
