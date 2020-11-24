@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 
 public class Vector extends Var{
 
-    private double[] value;
+    private final double[] value;
 
     public Vector(double[] value) {
         this.value = Arrays.copyOf(value, value.length);
