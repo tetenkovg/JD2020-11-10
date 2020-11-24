@@ -1,11 +1,13 @@
 package by.it.terentyev.jd01_06;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskB2 {
     public static void main(String[] args) {
         String[][] arrPoem = new String[32][2];
+        String[] arrPoem1 = new String[32];
         String sb = new String(Poem.text);
         sb = sb.replaceAll(" *[^а-яА-ЯёЁ \n]+ *"," ");
         sb = sb.trim();
@@ -16,10 +18,10 @@ public class TaskB2 {
             int col=matcher.end()-matcher.start();
             arrPoem [i][1] = matcher.group();
             arrPoem[i][0]= String.valueOf(col);
-            //System.out.println(col);
-            //System.out.println(matcher.group()+ "ok");
+            arrPoem1 [i] = matcher.group();
             i++;
         }
-        System.out.println(arrPoem[1][0]+" "+arrPoem[1][1]);
+        System.out.println(Arrays.toString(arrPoem1));
+       //System.out.print(Arrays.deepToString(arrPoem));
     }
 }
