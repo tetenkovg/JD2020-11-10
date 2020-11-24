@@ -35,7 +35,6 @@ public class TaskC2 {
             int i = random.nextInt(array.length);
             gen1 = gen1 + " " + array[i];
         }
-
         return gen1;
     }
 
