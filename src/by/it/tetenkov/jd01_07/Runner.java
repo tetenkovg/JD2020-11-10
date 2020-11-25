@@ -7,6 +7,7 @@ public class Runner {
         Var var3 = new Scalar((Scalar) var1);
         double[] values = {1, 2, 3, 4, 5};
         Var var4 = new Vector(values);
+        Var var5 = new Vector((Vector) var4);
 
         System.out.println(var1.toString());
         System.out.println(var2.toString());

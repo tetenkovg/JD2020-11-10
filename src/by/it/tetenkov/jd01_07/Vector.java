@@ -11,9 +11,9 @@ public class Vector extends Var{
         this.value = Arrays.copyOf(value, value.length);
     }
 
-    /*public Vector(Vector otherVector) {
-        this.value = Arrays.copyOf(otherVector, );
-    }*/
+    public Vector(Vector otherVector) {
+        this.value = Arrays.copyOf(otherVector.value,otherVector.value.length);
+    }
 
     @Override
     public String toString() {
