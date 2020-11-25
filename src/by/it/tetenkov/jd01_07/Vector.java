@@ -15,6 +15,19 @@ public class Vector extends Var{
         this.value = Arrays.copyOf(otherVector.value,otherVector.value.length);
     }
 
+    public Vector(String stringValue) {
+
+        String[] subString;
+        subString = stringValue.split(",");
+
+        double[] doubleArray = new double[subString.length];
+        for (int i = 0; i < doubleArray.length; i++) {
+            doubleArray[i] = Double.parseDouble(subString[i]);
+        }
+        this.value = doubleArray;
+
+    }
+
     @Override
     public String toString() {
         StringJoiner joiner = new StringJoiner(", ", "{", "}");
@@ -22,6 +35,8 @@ public class Vector extends Var{
             joiner.add(Double.toString(elements));
             
         }
+        System.out.println(joiner.toString());
+
         return joiner.toString();
     }
 }
