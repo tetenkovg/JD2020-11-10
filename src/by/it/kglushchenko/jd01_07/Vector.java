@@ -11,7 +11,12 @@ public class Vector extends Var {
     }
 
     public Vector(String strValue){
-        String[] strArray = strValue.split(" ");
+        String str = strValue.replaceAll("[^0-9.]+", " ").trim();
+
+                //joiner = new StringJoiner(", ", "{", "}");
+        //for(int i=0; i<)
+        //
+        String[] strArray = str.split(" ");
         double[] numArray = new double[strArray.length];
         for(int i=0;i<strArray.length;i++){
             numArray[i]=Double.parseDouble(strArray[i]);

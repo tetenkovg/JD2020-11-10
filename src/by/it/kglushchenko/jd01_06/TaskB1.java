@@ -9,48 +9,27 @@ public class TaskB1 {
 
         StringBuilder sbText = new StringBuilder(Poem.text); // читаем текст
         String stringText = sbText.toString();               // загоняем текст в строку
+        stringText = stringText.replaceAll("[^а-яА-ЯЁё]+", " ").trim();// заменяем все кроме букв пробелами
 
-
-        /*
-        char[] chars = stringText.toCharArray();
-        // Убираем , . - : !
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == ',' || chars[i] == '.' || chars[i] == '-' ||
-                    chars[i] == ':' || chars[i] == '!') {
-                chars[i] = ' ';
-            }
-        }
-        */
 
         // Создаем строку из слов и пробелов
         //String stringTextClear = Arrays.toString(chars);
 
         // Создаем массив слов
-        String[] words1 = stringText.split(" ");
-        String[] words2 = new String[words1.length]; // убераем , . - : !
+        String[] word = stringText.split(" ");
+
 
 
         // Выводим список слов по очереди
-        for (int i = 0; i < words1.length; i++) {
-            System.out.println(words1[i]);
+
+        for (int i = 0; i < word.length; i++) {
+            //System.out.println(word[i]);
+            comparator(word[i]);
         }
 
-        // Удаляем из строк слов лишние элементы
-        for (int i = 0; i < words1.length; i++) {
-            //words2[i] = words1[i].split('.');
-        }
 
-        /*
-        String[] sentences = stringTextClear.trim().split("\n"); // разбивает текст на строки
-        // Разбиваем строки на
 
-        for (int i = 0; i < sentences.length; i++) {
-            //String[] words = sentences[i].trim().split(" ");
-            char[] ch = sentences[i];
-        }
 
-        //String[] word; // массив отдельных строк
-        */
     }
 
 
@@ -60,8 +39,8 @@ public class TaskB1 {
         String lowerCase = word.toLowerCase();
         char start = lowerCase.charAt(0);
         char end = lowerCase.charAt(word.length() - 1);
-        for (int i = 0; i < g.length; i++) {
-            if (start == g[i]) {
+        for (int i = 0; i < s.length; i++) {
+            if (start == s[i]) {
                 for (int j = 0; j < g.length; j++) {
                     if (end == g[j]) {
                         System.out.println(word);

@@ -37,7 +37,8 @@ public class TaskA2 {
 
         }
         for (int i = 0; i < w.length; i++) {
-            System.out.println(w[i] + " = " + count[i]);
+            System.out.println(w[i] + "=" + count[i]);
         }
     }
+
 }
