@@ -13,10 +13,6 @@ class Scalar extends Var{
         this.value = otherScalar.value;
     }
 
-    Scalar(double[] vecValue) {
-        super();
-    }
-
     @Override
     public String toString() {
 

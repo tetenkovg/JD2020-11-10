@@ -12,7 +12,7 @@ class Vector extends Var {
         this.value = vector.value;
     }
     Vector(String strVector){
-        String a = strVector.substring(1, strVector.length()-1);
+        String a = strVector.replaceAll("[\\{\\}\\ ]", "");
         String[] str = a.split(",");
         double[] d = new double[str.length];
         for (int i = 0; i < str.length; i++) {
