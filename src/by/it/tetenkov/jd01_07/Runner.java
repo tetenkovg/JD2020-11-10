@@ -12,11 +12,11 @@ public class Runner {
         //B2
         Var var5 = new Vector((Vector) var4);
         //B3
-        String[] strValues = {"1", "2", "3", "4", "1"};
-        Var var6 = new Vector("1,2,3,4");
+        String strValues = "1.0, 2.0, 3.0";
+        Var var6 = new Vector(strValues);
 
-        System.out.println(var1.toString());
-        System.out.println(var2.toString());
-        System.out.println(var3.toString());
+        System.out.println(var4.toString());
+        System.out.println(var5.toString());
+        System.out.println(var6.toString());
     }
 }

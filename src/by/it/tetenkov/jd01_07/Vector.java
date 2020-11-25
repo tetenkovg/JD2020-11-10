@@ -18,8 +18,10 @@ public class Vector extends Var{
     public Vector(String stringValue) {
 
         String[] subString;
-        subString = stringValue.split(",");
-
+        String replace = stringValue.replace("{"," ");
+        replace = replace.replace("}", " ");
+        replace = replace.trim();
+        subString = replace.split(",");
         double[] doubleArray = new double[subString.length];
         for (int i = 0; i < doubleArray.length; i++) {
             doubleArray[i] = Double.parseDouble(subString[i]);
@@ -27,6 +29,7 @@ public class Vector extends Var{
         this.value = doubleArray;
 
     }
+
 
     @Override
     public String toString() {
