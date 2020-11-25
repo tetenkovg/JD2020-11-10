@@ -1,22 +1,21 @@
 package by.it.rydzeuski.jd01_07;
 
-public class Scalar extends Var {
-    private double value;
-    public Scalar(double value){
-        this.value=value;
-    }
-    public Scalar(String strValue){
-        this.value=Double.parseDouble(strValue);
+class Scalar extends Var {
 
+    private double value;
+
+    Scalar(double value) {
+        this.value = value;
     }
-    public Scalar(Scalar otherScalar){
-        this.value = otherScalar.value;
-    }
+Scalar(String strScalar){
+        this.value=Double.parseDouble(strScalar);
+}
+Scalar(Scalar scalar){
+        this.value=scalar.value;
+}
 
     @Override
     public String toString() {
-        return "Scalar{" +
-                "value=" + value +
-                '}';
+        return Double.toString(value);
     }
 }
