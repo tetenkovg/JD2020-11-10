@@ -18,9 +18,9 @@ public class Runner {
 
         Var matrix1 = new Matrix(new double[][]{{1.0, 2.0}, {3.0, 4.0}});
         Var matrix2 = new Matrix((Matrix) matrix1);
-//        Var matrix3 = new Matrix("{{1.0, 2.0}, {3.0, 4.0}}");
+        Var matrix3 = new Matrix("{{1.0, 2.0}, {3.0, 4.0}}");
         System.out.println(matrix1);
         System.out.println(matrix2);
-//        System.out.println(matrix3);
+        System.out.println(matrix3);
     }
 }
