@@ -7,9 +7,12 @@ class Vector extends Var{
         Vector (double[] value) {
             this.value = value;
         }
-    Vector (Vector vector){
-        this.value=vector.value;
-    }
+        Vector (Vector vector) {
+            this.value = vector.value;
+        }
+
+
+
 
 
         public String toString() {
