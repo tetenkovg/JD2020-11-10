@@ -47,6 +47,64 @@ class Vector extends Var{
     }
 
     @Override
+    public Var sub(Var other) {
+        if(other instanceof Scalar){
+            return this.add(new Scalar(-1).mul(other));
+        }else if(other instanceof Vector){
+            if(this.value.length == ((Vector) other).value.length){
+                return this.add(new Vector((Vector) other.mul(new Scalar(-1))));
+            }else{
+                System.out.println("Вектора разной длинны");
+                return null;
+            }
+        }else{
+            return super.sub(other);
+        }
+    }
+
+    @Override
+    public Var mul(Var other) {
+        if(other instanceof Scalar){
+            double[] res = Arrays.copyOf(value, value.length);
+            for (int i = 0; i < res.length; i++) {
+                res[i] = res[i] * ((Scalar) other).getValue();
+            }
+            return new Vector(res);
+        }else if(other instanceof Vector){
+            if(this.value.length == ((Vector) other).value.length){
+                double res = 0;
+                for (int j = 0; j < this.value.length; j++) {
+                    res = res + ((Vector) other).value[j] * this.value[j];
+                }
+                return new Scalar(res);
+            }else{
+                System.out.println("Вектора разной длинны");
+                return null;
+            }
+        }else{
+            return other.mul(this);
+        }
+    }
+
+    @Override
+    public Var div(Var other) {
+        if(other instanceof Scalar){
+            if (((Scalar) other).getValue()==0){
+                System.out.println("Division by zero");
+                return null; //stub
+            }else{
+                double[] res = Arrays.copyOf(value, value.length);
+                for (int i = 0; i < res.length; i++) {
+                    res[i] = res[i] / ((Scalar) other).getValue();
+                }
+                return new Vector(res);
+            }
+        }else{
+            return super.div(other);
+        }
+    }
+
+    @Override
     public String toString() {
         StringJoiner stringJoiner = new StringJoiner(", ", "{", "}");
         for (double v : value) {

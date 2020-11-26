@@ -28,7 +28,56 @@ class Matrix extends Var{
        }
    }
 
-   @Override
+    @Override
+    public Var add(Var other) {
+        if(other instanceof Scalar){
+            double[][] res = new double[this.value.length][];
+            for (int i = 0; i < res.length; i++) {
+                res[i] = new double[this.value[0].length];
+            }
+            for (int i = 0; i < res.length; i++) {
+                for (int j = 0; j < this.value[i].length; j++) {
+                    res[i][j] = this.value[i][j] + ((Scalar) other).getValue();
+                }
+            }
+            return new Matrix(res);
+        }else if(other instanceof Matrix){
+            if(this.value.length == ((Matrix) other).value.length && this.value[0].length == ((Matrix) other).value[0].length){
+                double[][] res = new double[this.value.length][];
+                for (int i = 0; i < res.length; i++) {
+                    res[i] = new double[this.value[0].length];
+                }
+                for (int i = 0; i < res.length; i++) {
+                    for (int j = 0; j < this.value[i].length; j++) {
+                        res[i][j] = this.value[i][j] + ((Matrix) other).value[i][j];
+                    }
+                }
+                return new Matrix(res);
+            }else{
+                System.out.println("Матрицы разных размеров");
+                return null;
+            }
+        }else{
+            return super.add(other);
+        }
+    }
+
+    @Override
+    public Var sub(Var other) {
+        return super.sub(other);
+    }
+
+    @Override
+    public Var mul(Var other) {
+        return super.mul(other);
+    }
+
+    @Override
+    public Var div(Var other) {
+        return super.div(other);
+    }
+
+    @Override
    public String toString() {
        StringBuilder sb = new StringBuilder("{");
        for (int i = 0; i < value.length; i++) {
