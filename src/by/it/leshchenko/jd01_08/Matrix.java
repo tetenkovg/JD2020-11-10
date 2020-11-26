@@ -1,4 +1,4 @@
-package by.it.leshchenko.jd01_07;
+package by.it.leshchenko.jd01_08;
 
 import java.util.Arrays;
 import java.util.StringJoiner;

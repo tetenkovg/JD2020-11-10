@@ -1,4 +1,4 @@
-package by.it.leshchenko.jd01_07;
+package by.it.leshchenko.jd01_08;
 
 class Scalar extends Var {
     private final double value;
