@@ -104,6 +104,10 @@ class Vector extends Var{
         }
     }
 
+    public double[] getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         StringJoiner stringJoiner = new StringJoiner(", ", "{", "}");
