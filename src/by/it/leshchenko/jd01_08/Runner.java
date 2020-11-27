@@ -1,8 +1,12 @@
 package by.it.leshchenko.jd01_08;
 
+import java.util.Objects;
+
 public class Runner {
     private static void print(Var var) {
-        System.out.println(var);
+        if (Objects.nonNull(var)) {
+            System.out.println(var);
+        }
     }
 
     public static void main(String[] args) {

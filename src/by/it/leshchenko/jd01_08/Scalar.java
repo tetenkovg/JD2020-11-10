@@ -1,7 +1,5 @@
 package by.it.leshchenko.jd01_08;
 
-import java.util.Scanner;
-
 class Scalar extends Var {
     private final double value;
 
@@ -47,13 +45,18 @@ class Scalar extends Var {
             double mul = this.value * ((Scalar) other).value;
             return new Scalar(mul);
         } else {
-            return other.add(this);
+            return other.mul(this);
         }
     }
 
     @Override
     public Var div(Var other) {
         if (other instanceof Scalar) {
+            double otherValue = ((Scalar) other).value;
+            if (otherValue == 0) {
+                System.out.println("Деление на 0 невозможно");
+                return null;
+            }
             double div = this.value / ((Scalar) other).value;
             return new Scalar(div);
         } else {

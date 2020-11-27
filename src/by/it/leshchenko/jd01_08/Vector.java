@@ -40,7 +40,7 @@ class Vector extends Var {
                 result[i] += ((Scalar) other).getValue();
             }
             return new Vector(result);
-        } else if (other instanceof Vector) {
+        } else if (other instanceof Vector && this.value.length == ((Vector) other).value.length) {
             double[] result = Arrays.copyOf(value, value.length);
             for (int i = 0; i < result.length; i++) {
                 result[i] += ((Vector) other).value[i];
@@ -59,14 +59,14 @@ class Vector extends Var {
                 result[i] -= ((Scalar) other).getValue();
             }
             return new Vector(result);
-        } else if (other instanceof Vector) {
+        } else if (other instanceof Vector && this.value.length == ((Vector) other).value.length) {
             double[] result = Arrays.copyOf(value, value.length);
             for (int i = 0; i < result.length; i++) {
                 result[i] -= ((Vector) other).value[i];
             }
             return new Vector(result);
         } else {
-            return super.add(other);
+            return super.sub(other);
         }
     }
 
@@ -78,7 +78,7 @@ class Vector extends Var {
                 result[i] = result[i] * ((Scalar) other).getValue();
             }
             return new Vector(result);
-        } else if (other instanceof Vector) {
+        } else if (other instanceof Vector && this.value.length == ((Vector) other).value.length) {
             double[] array = Arrays.copyOf(value, value.length);
             double result = 0;
             for (int i = 0; i < array.length; i++) {
@@ -86,20 +86,25 @@ class Vector extends Var {
             }
             return new Scalar(result);
         } else {
-            return super.add(other);
+            return super.mul(other);
         }
     }
 
     @Override
     public Var div(Var other) {
         if (other instanceof Scalar) {
+            double otherValue = ((Scalar) other).getValue();
+            if (otherValue == 0) {
+                System.out.println("Деление на 0 невозможно");
+                return null;
+            }
             double[] result = Arrays.copyOf(value, value.length);
             for (int i = 0; i < result.length; i++) {
                 result[i] = result[i] / ((Scalar) other).getValue();
             }
             return new Vector(result);
         } else {
-            return super.add(other);
+            return super.div(other);
         }
     }
 
