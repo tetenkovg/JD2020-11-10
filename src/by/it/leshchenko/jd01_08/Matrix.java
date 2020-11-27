@@ -40,6 +40,48 @@ class Matrix extends Var {
     }
 
     @Override
+    public Var add(Var other) {
+        if (other instanceof Scalar) {
+            double[][] array = Arrays.copyOf(value, value.length);
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    array[i][j] += ((Scalar) other).getValue();
+                }
+            }
+            return new Matrix(array);
+        } else if (other instanceof Matrix && this.value.length == ((Matrix) other).value.length && this.value[0].length == ((Matrix) other).value[0].length) {
+            // Copy array
+            double[][] array = new double[value.length][];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = Arrays.copyOf(value[i], value.length);
+            }
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    array[i][j] = array[i][j] + ((Matrix) other).value[i][j];
+                }
+            }
+            return new Matrix(array);
+        } else {
+            return super.add(other);
+        }
+    }
+
+    @Override
+    public Var sub(Var other) {
+        return super.sub(other);
+    }
+
+    @Override
+    public Var mul(Var other) {
+        return super.mul(other);
+    }
+
+    @Override
+    public Var div(Var other) {
+        return super.div(other);
+    }
+
+    @Override
     public String toString() {
         StringJoiner joiner = new StringJoiner(", ", "{", "}");
         for (double[] row : value) {
