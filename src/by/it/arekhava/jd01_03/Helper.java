@@ -66,6 +66,7 @@ public class Helper {
                 fin[i][j]=fin[i][j]+matrixLeft[i][k]*matrixRight[k][j];
         return fin;
     }
+
 }
 
 
