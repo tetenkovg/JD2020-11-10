@@ -95,12 +95,59 @@ class Matrix extends Var {
 
     @Override
     public Var mul(Var other) {
-        return super.mul(other);
+        if (other instanceof Scalar) {
+            double[][] array = Arrays.copyOf(value, value.length);
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    array[i][j] *= ((Scalar) other).getValue();
+                }
+            }
+            return new Matrix(array);
+        } else if (other instanceof Vector && value[0].length == ((Vector) other).getValue().length) {
+            double[] array = new double[value.length];
+            for (int i = 0; i < value.length; i++) {
+                for (int j = 0; j < ((Vector) other).getValue().length; j++) {
+                    array[i] = array[i] + value[i][j] * ((Vector) other).getValue()[j];
+                }
+            }
+            return new Vector(array);
+        } else if (other instanceof Matrix && (this.value[0].length == ((Matrix) other).value.length)) {
+            // Copy array
+            double[][] array = new double[value.length][];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = Arrays.copyOf(value[i], value.length);
+            }
+            double[][] result = new double[value.length][((Matrix) other).value[0].length];
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < ((Matrix) other).value[i].length; j++) {
+                    for (int k = 0; k < ((Matrix) other).value.length; k++) {
+                        result[i][j] = result[i][j] + array[i][k] * ((Matrix) other).value[k][j];
+                    }
+                }
+            }
+            return new Matrix(result);
+        } else {
+            return super.mul(other);
+        }
     }
 
     @Override
     public Var div(Var other) {
-        return super.div(other);
+        if (other instanceof Scalar) {
+            if (((Scalar) other).getValue() == 0) {
+                System.out.println("Деление на 0 невозможно");
+                return null;
+            }
+            double[][] array = Arrays.copyOf(value, value.length);
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    array[i][j] /= ((Scalar) other).getValue();
+                }
+            }
+            return new Matrix(array);
+        } else {
+            return super.div(other);
+        }
     }
 
     @Override
