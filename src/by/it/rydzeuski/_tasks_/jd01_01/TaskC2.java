@@ -1,6 +1,5 @@
 package by.it.rydzeuski._tasks_.jd01_01;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /* Нужно написать программу, которая вводит два числа с клавиатуры
@@ -19,3 +18,18 @@ OCT:42+32=74
 Допускается свободное использование любых методов стандартной библиотеки
 */
 
+
+
+        class TaskC2{
+
+            public static void main(String[] args) {
+                Scanner sc=new Scanner(System.in);
+                int i=sc.nextInt();
+                int j=sc.nextInt();
+                System.out.printf("DEC:%d+%d=%d\n",i,j,i+j);
+                System.out.printf("BIN:%+%=%\n",i,j,i+j);
+                System.out.printf("HEX:%x+%x=%x\n",i,j,i+j);
+                System.out.printf("OCT:%o+%o=%o\n",i,j,i+j);
+            }
+
+        }
