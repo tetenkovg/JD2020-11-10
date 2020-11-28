@@ -1,8 +1,8 @@
-package by.it.terentyev.jd01_07;
+package by.it.terentyev.jd01_08;
 
- class Scalar extends Var {  
+public class Scalar extends Var {
 
-     double value;
+    private double value;
 
     public Scalar(double value) {
         this.value = value;
