@@ -11,20 +11,14 @@ class Vector extends Var {
         this.value = Arrays.copyOf(value, value.length);
     }
 
-
     public Vector(String strValue) {
-        String str = strValue.replaceAll("[^0-9.]+", " ").trim();
-        String[] strArray = str.split(" ");
-        double[] numArray = new double[strArray.length];
-        for (int i = 0; i < strArray.length; i++) {
-            numArray[i] = Double.parseDouble(strArray[i]);
-        }
-        this.value = numArray;
+        this.value = Arrays.copyOf(number(strValue), number(strValue).length);
     }
 
     public Vector(Vector otherVector) {
-        this.value = otherVector.value;
+        this.value = Arrays.copyOf(otherVector.value, otherVector.value.length);   //otherVector.value;
     }
+
 
     @Override
     public Var add(Var other) {
@@ -103,4 +97,16 @@ class Vector extends Var {
         }
         return joiner.toString();
     }
+
+    private static double[] number(String line) {
+
+        String[] number = line.replaceAll("[{}]", "").trim().split(",");
+        double[] arrayOfNumber = new double[number.length];
+
+        for (int i = 0; i < arrayOfNumber.length; i++) {
+            arrayOfNumber[i] = Double.parseDouble(number[i]);
+        }
+        return arrayOfNumber;
+    }
 }
+
