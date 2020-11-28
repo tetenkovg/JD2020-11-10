@@ -2,17 +2,19 @@ package by.it.rydzeuski.jd01_07;
 
 class Scalar extends Var {
 
-    private double value;
+    private final double value;
 
     Scalar(double value) {
         this.value = value;
     }
-Scalar(String strScalar){
-        this.value=Double.parseDouble(strScalar);
-}
-Scalar(Scalar scalar){
-        this.value=scalar.value;
-}
+
+    Scalar(String strScalar) {
+        this.value = Double.parseDouble(strScalar);
+    }
+
+    Scalar(Scalar scalar) {
+        this.value = scalar.value;
+    }
 
     @Override
     public String toString() {
