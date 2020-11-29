@@ -11,12 +11,23 @@ class Vector extends Var{
         this.value = Arrays.copyOf(value, value.length);
     }
 
-//    public Vector(String strVector) {
-//        this.value = Arrays.copyOf(number(strVector), number(strVector).length);
-//    }
+    public Vector(Vector otherVector) {
+        this.value=otherVector.value;
+    }
 
-//    private double[] number(String strVector) {
-//    }
+    public Vector(String strVar) {
+        String[] strArr = strVar
+                .replace("{", "")
+                .replace("}", "")
+                .replaceAll("\\s+", "")
+                .split(",");
+
+        double[] res = value = new double[strArr.length];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = Double.parseDouble(strArr[i]);
+        }
+    }
+
 
     @Override
     public String toString() {
