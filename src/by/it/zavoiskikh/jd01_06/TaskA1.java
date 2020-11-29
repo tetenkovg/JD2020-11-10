@@ -9,7 +9,9 @@ public class TaskA1 {
         Pattern pattern = Pattern.compile("[a-яA-яёЁ]+");
         Matcher matcher = pattern.matcher (dynText);
         while (matcher.find()) {
-            System.out.println (matcher.group ());
+            int index = matcher.start () ;
+        dynText.setCharAt(index, '#');
+        System.out.println(dynText);
         }
     }
 }
