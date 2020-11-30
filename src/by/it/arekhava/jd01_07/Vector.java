@@ -1,14 +1,34 @@
 package by.it.arekhava.jd01_07;
 
+import java.util.Arrays;
+
 class Vector extends Var{
 
-        private double[] value;
+        private double[] array;
 
-        Vector (double[] value) {
-            this.value = value;
+
+
+       Vector(double[] value) {
+           this.array = Arrays.copyOf(value, value.length);
+      }
+
+       Vector(String strVector) {
+            this.array = Arrays.copyOf(number(strVector), number(strVector).length);
         }
-        Vector (Vector vector) {
-            this.value = vector.value;
+
+        Vector(Vector vector) {
+            this.array = Arrays.copyOf(vector.array, vector.array.length);
+        }
+
+        private static double[] number(String line) {
+
+          String[] number = line.replaceAll("[{}]", "").trim().split(",");
+            double[] arrayOfNumber = new double[number.length];
+
+            for (int i = 0; i < arrayOfNumber.length; i++) {
+                arrayOfNumber[i] = Double.parseDouble(number[i]);
+            }
+            return arrayOfNumber;
         }
 
 
@@ -18,7 +38,7 @@ class Vector extends Var{
         public String toString() {
             StringBuilder sb=new StringBuilder( "{");
             String delimiter="";
-            for (double element : value) {
+            for (double element : array) {
                 sb.append(delimiter).append(element);
                 delimiter=", ";
 
