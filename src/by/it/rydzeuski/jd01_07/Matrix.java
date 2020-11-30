@@ -1,4 +1,14 @@
 package by.it.rydzeuski.jd01_07;
 
-public abstract class Matrix extends Var {
+class Matrix extends Var {
+    protected double value;
+
+
+
+    @Override
+    public String toString() {
+        return "Matrix{" +
+                "value=" + value +
+                '}';
+    }
 }

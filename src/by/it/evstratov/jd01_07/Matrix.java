@@ -1,9 +1,8 @@
 package by.it.evstratov.jd01_07;
 
-import java.util.Arrays;
 import java.util.StringJoiner;
 
-public class Matrix extends Var{
+ class Matrix extends Var{
 
     private final double[][] value;
 
