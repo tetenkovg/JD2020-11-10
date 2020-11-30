@@ -8,6 +8,10 @@ class Scalar extends Var {
         this.value = value;
     }
 
+    public double getValue() {
+        return value;
+    }
+
     Scalar(String strValue) {
         this.value = Double.parseDouble(strValue);
     }
