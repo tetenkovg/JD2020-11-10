@@ -1,4 +1,4 @@
-package by.it.tetenkov.jd01_08;
+package by.it.tetenkov.jd01_09;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -11,11 +11,19 @@ class Vector extends Var {
         this.value = Arrays.copyOf(value, value.length);
     }
 
+    public Vector(String strVar) {
+       String[] strArr = strVar
+                .replace("}", "" )
+                .replace("{", "" )
+                .replaceAll("\\s+", "")
+                .split(",");
+      double[] res =  value = new double[strArr.length];
 
-
-    Vector(Vector vector) {
-        this.value = Arrays.copyOf(vector.value, vector.value.length);
+        for (int i = 0; i < res.length; i++) {
+            res[i] = Double.parseDouble(strArr[i]);
+        }
     }
+
 
     @Override
     public Var add(Var other) {
