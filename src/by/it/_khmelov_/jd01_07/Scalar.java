@@ -1,6 +1,6 @@
 package by.it._khmelov_.jd01_07;
 
-public class Scalar extends Var {
+class Scalar extends Var {
 
     private double value;
 
