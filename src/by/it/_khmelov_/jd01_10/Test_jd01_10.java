@@ -183,12 +183,11 @@ public class Test_jd01_10 extends HomeWork {
 
                 .exclude("checkIndex")
                 .exclude("rangeCheck")
-                .exclude("format")
+                //.exclude("format") JDK 14+ not work
                 .exclude("copyValueOf")
                 .exclude("checkOffset")
                 .exclude("checkBoundsOffCount")
                 .exclude("checkBoundsBeginEnd")
-
         ;
         System.out.println("OK");
     }
