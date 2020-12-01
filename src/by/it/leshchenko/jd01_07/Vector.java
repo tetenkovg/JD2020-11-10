@@ -5,10 +5,10 @@ import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Vector extends Var {
+class Vector extends Var {
     private final double[] value;
 
-    public Vector(double[] value)  {
+    public Vector(double[] value) {
         this.value = Arrays.copyOf(value, value.length);
     }
 
