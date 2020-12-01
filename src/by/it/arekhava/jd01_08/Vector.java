@@ -78,12 +78,39 @@ class Vector extends Var {
             return new Vector(arr);
 
         }
-        return super.add(other);
+        return super.sub(other);
+    }
+    public Var mul(Var other) {
+        if (other instanceof Scalar) {
+            double otherValue = ((Scalar) other).getValue();
+            double[] arr = Arrays.copyOf(array, array.length);
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] *= ((Scalar) other).getValue();
+
+            }
+            return new Vector(arr);
+
+        } else if (other instanceof Vector) {
+
+
+            double sum = 0;
+            for (int i = 0; i < this.array.length; i++) {
+
+                sum += this.array[i] * ((Vector) other).array[i];
+
+            }
+            return new Scalar(sum);
+
+        } else {
+            return super.mul(other);
+
+
+        }
+
+
     }
 
-
-
-        public String toString() {
+    public String toString() {
             StringBuilder sb=new StringBuilder( "{");
             String delimiter="";
             for (double element : array) {
