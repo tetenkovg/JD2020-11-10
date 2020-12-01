@@ -1,9 +1,8 @@
-package by.it.leshchenko.jd01_07;
+package by.it.arekhava.jd01_07;
 
 abstract class Var {
-
     @Override
     public String toString() {
-        return super.toString();
+        return "Это класс Var";
     }
 }
