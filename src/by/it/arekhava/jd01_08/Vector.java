@@ -109,8 +109,31 @@ class Vector extends Var {
 
 
     }
+    public Var div(Var other) {
+        if (other instanceof Scalar) {
+            double otherValue = ((Scalar) other).getValue();
+            double[] arr = Arrays.copyOf(array, array.length);
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] /= ((Scalar) other).getValue();
 
-    public String toString() {
+            }
+            return new Vector(arr);
+
+        } else if (other instanceof Vector) {
+
+
+
+
+            }
+            return super.div(other);
+
+
+
+
+        }
+
+
+        public String toString() {
             StringBuilder sb=new StringBuilder( "{");
             String delimiter="";
             for (double element : array) {
