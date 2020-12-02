@@ -1,4 +1,4 @@
-package by.it._tasks_.jd01_09;
+package by.it.arekhava.jd01_09;
 
 
 import by.it.HomeWork;
