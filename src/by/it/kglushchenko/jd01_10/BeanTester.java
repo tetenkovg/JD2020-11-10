@@ -8,7 +8,7 @@ public class BeanTester {
     public static void main(String[] args) throws Exception {
         //processParamCreate(Bean.class);
         Class<Bean> cls = Bean.class;
-        if (cls.isAnnotationPresent(Param.class)) {             // проверяем есть ли аннотация
+        if (cls.isAnnotationPresent(Param.class)) {             // проверяем есть ли аннотация Param
             Param ann = cls.getAnnotation(Param.class);         // получили саму анотацию
             System.out.println((cls.isAnnotationPresent(Param.class)));
 
@@ -100,5 +100,14 @@ public class BeanTester {
 
         }
     }*/
-
+/*
+        HomeWork run = run("", true);
+        Class<?> bean = findClass("Bean");
+        Class<? extends Annotation> anno = (Class<? extends Annotation>) findClass("Param");
+        Method a = anno.getMethod("a");
+        Method b = anno.getMethod("b");
+        Object instance = bean.getDeclaredConstructor().newInstance();
+        Method[] methods = bean.getDeclaredMethods();
+        System.out.println();
+ */
 }
