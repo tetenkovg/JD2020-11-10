@@ -25,7 +25,7 @@ public class PrintMath {
                 contract.append("public static ");
                 Class<?> returnType = method.getReturnType();
                 String nameReturnType = returnType.getSimpleName();
-                contract.append(nameReturnType + " ").append(method.getName()).append("(");
+                contract.append(nameReturnType).append(" ").append(method.getName()).append("(");
                 Parameter[] parameters = method.getParameters();
                 String delimiter = "";
                 for (Parameter parameter : parameters) {
