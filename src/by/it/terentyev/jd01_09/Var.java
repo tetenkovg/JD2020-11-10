@@ -2,11 +2,11 @@ package by.it.terentyev.jd01_09;
 
 abstract class Var implements Operation {
 
-//    public static Var createVar(String expression) {
+//    public static Var createVar(String strVar) {
 //        if (strVar.matches(Patterns.SCALAR)){
 //            return new Scalar(strVar);
 //        }
-//        else if ()
+//        else if ();
 //    }
 
     @Override

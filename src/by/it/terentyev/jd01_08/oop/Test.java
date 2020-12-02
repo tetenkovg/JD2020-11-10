@@ -1,4 +1,4 @@
-package by.it.terentyev;
+package by.it.terentyev.jd01_08.oop;
 
 import java.util.Arrays;
 
