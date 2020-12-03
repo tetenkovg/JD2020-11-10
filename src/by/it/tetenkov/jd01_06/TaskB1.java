@@ -10,7 +10,6 @@ public class TaskB1 {
 
     private static String[] words = {};
     private static String consonantsRussian = "цкнгшщзхфвпрлджбтмсчй"; // соглаcные
-    private static String[] vowelsWords = {};
     private static String vowelsRussian = "аоуэиыеёяю"; // гласные
 
 
