@@ -18,5 +18,7 @@ public class Runner {
         System.out.println(var4.toString());
         System.out.println(var5.toString());
         System.out.println(var6.toString());
+
+        System.out.println();
     }
 }
